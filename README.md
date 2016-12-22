@@ -34,7 +34,7 @@ Ver 1.1 comes with an Admin page to set your preferences.
 
 
 ##For Developers##
-Add your custom styles or extensions to the respective subfolders. Defined styles/extensions (see existing ones) will be auto-loaded to be selected on the Admin page. /defaults/config.php contains the plugin default config which will be used as long as the Admin page Settings are not saved once.
+Add your custom styles or extensions to the respective subfolders. Defined styles/extensions (see existing ones) will be auto-loaded to be selected on the Admin page. [/defaults/config.php](https://github.com/juek/Colorbox-Extender/blob/master/defaults/config.php) contains the plugin default config which will be used as long as the Admin page Settings are not saved once.
 
 
 ##Manual Installation##
