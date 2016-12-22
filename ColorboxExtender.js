@@ -31,13 +31,13 @@ $(document).ready( function(){
     e.preventDefault();
     var src = jPrep(this.href, 'gpreq=body');
     var options = $gp.cboxSettings();
-    $.extend(options, { 
+    $.extend(true, options, { 
       href : src, 
       open : true , 
       iframe : true, 
-      fastIframe : false
-      //, width : "90%",
-      // height : "90%",
+      fastIframe : false,
+      width : "90%",
+      height : "90%" // ,
       // onOpen : function() { 
         // do sth. 
       // },
@@ -45,6 +45,7 @@ $(document).ready( function(){
         // do sth. 
       // }
     });
+    console.log(options);
     $.colorbox(options);
   });
   //*/
