@@ -21,12 +21,12 @@ Zoom: Once the plugin is installed, the zoom feature is enabled by default.
 
 Any image in Colorbox: 
 ```
-&lt;a href="/path/to/image.jpg" class="colorbox" title="Image Caption"&gt;My Image&lt;/a&gt;
+<a href="/path/to/image.jpg" class="colorbox" title="Image Caption">My Image</a>;
 ```
 
 Page in Colorbox: 
 ```
-&lt;a href="/About" class="loadPageInColorbox"&gt;About&lt;/a&gt;
+<a href="/About" class="loadPageInColorbox">About</a>
 ```
 
 ##Manual Installation##
