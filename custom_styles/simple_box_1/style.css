@@ -1,0 +1,131 @@
+/*
+#############################################################################
+
+Custom Colorbox style 'Simple Box 1'
+
+* overrides any example style set in Typesetter's Configuration
+* needs FontAwesome to be loaded
+
+Author: J. Krausz
+Date: 2016-12-22
+Version 1.0
+#############################################################################
+*/
+
+
+#cboxOverlay {
+background:#000;
+}
+
+#cboxTopLeft, #cboxTopCenter, #cboxTopRight,
+#cboxMiddleLeft, #cboxMiddleRight,
+#cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight {
+width:0;
+height:0;
+display:none;
+}
+
+#cboxContent, 
+#cboxLoadedContent { 
+margin:0;
+}
+
+#cboxContent img {}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose {
+position:absolute;
+background:none;
+width:64px;
+height:64px;
+overflow:hidden;
+text-indent:96px;
+white-space:nowrap;
+color:rgba(255,255,255,0.85);
+text-shadow:0 1px 2px rgba(0,0,0,0.7), 0 0 8px rgba(0,0,0,0.5);
+z-index:10;
+}
+
+#cboxPrevious:hover,
+#cboxNext:hover,
+#cboxClose:hover {
+color:rgba(255,255,255,1); 
+}
+
+#cboxPrevious {
+margin:-32px 0 0;
+top:50%;
+left:0;
+right:auto;
+}
+#cboxNext {
+margin:-32px 0 0;
+top:50%;
+left:auto;
+right:0;
+}
+#cboxClose {
+margin:0;
+top:0;
+right:0;
+bottom:auto;
+left:auto;
+}
+
+#cboxPrevious:before,
+#cboxNext:before,
+#cboxClose:before {
+font-family:"FontAwesome"!important;
+font-size:48px;
+position:absolute;
+top:0;
+left:0;
+width:64px;
+height:64px;
+line-height:64px;
+text-align:center;
+text-indent:0;
+}
+
+#cboxPrevious:before {
+content:"\f104";      /* \f104 = fa-angle-left, \f053 = fa-chevron-left */
+}
+
+#cboxNext:before {
+content:"\f105";      /* \f105 = fa-angle-right, \f054 = fa-chevron-right */
+}
+
+#cboxClose:before {
+font-size:24px;
+content:"\f00d";      /* \f00d = fa-close */
+}
+
+#cboxTitle {
+bottom:0;
+padding:10px 15px;
+background:rgba(0,0,0,0.85);
+color:#eee;
+}
+
+#cboxTitle:empty {
+display:none!important;
+}
+
+#cboxCurrent {
+bottom:0;
+left:0;
+padding:10px 0 10px 15px;
+color:#eee;
+}
+
+#cboxTitle:empty + #cboxCurrent:not(:empty) {
+float:none!important;
+width:100%;
+background:rgba(0,0,0,0.85);
+}
+
+
+
+
+#cboxLoadingGraphic {}

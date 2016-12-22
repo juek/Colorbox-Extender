@@ -18,6 +18,15 @@ class ColorboxExtender{
     $page->head_js[] =  $addonRelativeCode . '/thirdparty/jquery.zoom/jquery.zoom.min.js';
     $page->head_js[] =  $addonRelativeCode . '/ColorboxExtender.js';
     \gp\tool::AddColorBox();
+
+
+    /* ###  C U S T O M   S T Y L E S  #### */
+    
+    //* simple_box_1
+    \gp\tool::LoadComponents('fontawesome');
+    $page->css_user[] = $addonRelativeCode . '/custom_styles/simple_box_1/style.css';
+    //*/
+
   }
 
 }
