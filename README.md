@@ -12,6 +12,8 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 
 ##Current extensions##
 * Zoom images in Colorbox by implementing [jquery.zoom](http://www.jacklmoore.com/zoom)
+* Show any image in Colorbox by using/adding the 'colorbox' class to the anchor
+* Show a Typesetter page in Colorbox by using/adding the 'loadPageInColorbox' class to the anchor
 
 ##Manual Installation##
 Until the plugin is released on typesettercms.com, you need to download and install it manually:
