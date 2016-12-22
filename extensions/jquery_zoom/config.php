@@ -10,7 +10,6 @@ $config = array (
                       'jquery.zoom/jquery.zoom.min.js',
                       'init.js',
                     ),
-  // 'components' =>   array(), // e.g. 'fontawesome', 'slider'
   // 'stylesheets' =>  array(), // e.g. 'style.css'
 
 );
