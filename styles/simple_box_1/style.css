@@ -127,7 +127,7 @@ color:#eee;
 #cboxTitle:empty + #cboxCurrent:not(:empty) {
 float:none!important;
 width:100%;
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0);
 }
 
 
