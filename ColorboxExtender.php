@@ -17,6 +17,7 @@ class ColorboxExtender{
     $page->css_user[] = $addonRelativeCode . '/ColorboxExtender.css';
     $page->head_js[] =  $addonRelativeCode . '/thirdparty/jquery.zoom/jquery.zoom.min.js';
     $page->head_js[] =  $addonRelativeCode . '/ColorboxExtender.js';
+    \gp\tool::AddColorBox();
   }
 
 }
