@@ -3,7 +3,7 @@
 ##About
 
 Extends Typesetter's Colorbox implementation by additional features.
-Current version 1.0 
+Current version 1.1 
 
 See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub](https://github.com/Typesetter/Typesetter)
 
@@ -17,7 +17,7 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 
 ##Usage##
 
-**Zoom:** Once the plugin is installed, the zoom feature is enabled by default.
+**Zoom:** Once the plugin is installed, the zoom feature is enabled by default. Can be changed on the Admin page.
 
 **Any image in Colorbox:** 
 ```
@@ -28,6 +28,14 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 ```
 <a href="/About" class="loadPageInColorbox">About</a>
 ```
+
+##Admin Page##
+Ver 1.1 comes with an Admin page to set your preferences.
+
+
+##For Developers##
+Add your custom styles or extensions to the respective subfolders. Defined styles/extensions (see existing ones) will be auto-loaded to be selected on the Admin page. /defaults/config.php contains the plugin default config which will be used as long as the Admin page Settings are not saved once.
+
 
 ##Manual Installation##
 Until the plugin is released on typesettercms.com, you need to download and install it manually:
