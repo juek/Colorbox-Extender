@@ -17,14 +17,14 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 
 ##Usage##
 
-Zoom: Once the plugin is installed, the zoom feature is enabled by default.
+_Zoom:_ Once the plugin is installed, the zoom feature is enabled by default.
 
-Any image in Colorbox: 
+_Any image in Colorbox:_ 
 ```
-<a href="/path/to/image.jpg" class="colorbox" title="Image Caption">My Image</a>;
+<a href="/path/to/image.jpg" class="colorbox" title="Image Caption">My Image</a>
 ```
 
-Page in Colorbox: 
+_Page in Colorbox:_ 
 ```
 <a href="/About" class="loadPageInColorbox">About</a>
 ```
