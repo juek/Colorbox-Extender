@@ -1,0 +1,217 @@
+/*
+#############################################################################
+
+Custom Colorbox style 'MediaWiki Style'
+
+* overrides any example style set in Typesetter's Configuration
+
+Author: J. Krausz
+Date: 2016-12-22
+Version 1.0
+#############################################################################
+*/
+
+
+#cboxOverlay,
+#cboxContent {
+background:#000;
+opacity:1!important;
+}
+
+#cboxTopLeft, #cboxTopCenter, #cboxTopRight,
+#cboxMiddleLeft, #cboxMiddleRight,
+#cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight, 
+#cboxWrapper>div:first-child,
+#cboxWrapper>div:last-child {
+width:0;
+height:0;
+display:none;
+}
+
+#colorbox,
+#cboxContent, 
+#cboxWrapper,
+#cboxWrapper>div:nth-child(2),
+#cboxLoadedContent { 
+margin:0;
+position:fixed!important;
+float:none;
+clear:none;
+top:0!important;
+right:0!important;
+bottom:0!important;
+left:0!important;
+width:100%!important;
+height:100%!important;
+background-color:#000!important;
+overflow-y:hidden!important;
+}
+
+#cboxContent:-webkit-full-screen:-webkit-backdrop,
+#cboxContent:-moz-full-screen:-moz-backdrop,
+#cboxContent:-ms-fullscreen:-ms-backdrop,
+#cboxContent:fullscreen:backdrop { 
+background-color:#000!important;
+}
+
+#cboxContent img.cboxPhoto {
+width:auto!important;
+height:auto!important;
+max-width:100%!important;
+max-height:100%!important;
+position:absolute;
+top:50%;
+left:50%;
+-webkit-transform:translate(-50%,-50%);
+-moz-transform:translate(-50%,-50%);
+-ms-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+}
+
+#cboxContent img.zoomImg.zoomEnabled {
+cursor:all-scroll;
+cursor:zoom-in; /* not supported in IE */
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxFullscreen {
+position:absolute;
+background:none;
+overflow:hidden;
+border: 0 none;
+text-indent:96px;
+white-space:nowrap;
+color:rgba(255,255,255,0.85);
+text-shadow:0 0 2px rgba(0,0,0,0.7), 0 0 8px rgba(0,0,0,0.5);
+z-index:10;
+-webkit-transition:all 0.3s;
+transition:all 0.3s;
+}
+
+#cboxPrevious {
+width:64px;
+height:120px;
+line-height:120px;
+margin:-60px 0 0;
+top:50%;
+left:0;
+right:auto;
+}
+#cboxNext {
+width:64px;
+height:120px;
+line-height:120px;
+margin:-60px 0 0;
+top:50%;
+left:auto;
+right:0;
+}
+#cboxClose,
+#cboxFullscreen {
+width:48px;
+height:48px;
+line-height:48px;
+margin:0;
+right:0;
+bottom:auto;
+left:auto;
+}
+#cboxClose {
+top:0;
+}
+#cboxFullscreen {
+top:48px;
+}
+
+#cboxPrevious:hover,
+#cboxNext:hover,
+#cboxClose:hover,
+#cboxFullscreen:hover {
+color:rgba(255,255,255,1); 
+}
+
+#cboxPrevious:hover {
+-webkit-transform:translateX(-4px);
+-moz-transform:translateX(-4px);
+-ms-transform:translateX(-4px);
+transform:translateX(-4px);
+}
+
+#cboxNext:hover {
+-webkit-transform:translateX(4px);
+-moz-transform:translateX(4px);
+-ms-transform:translateX(4px);
+transform:translateX(4px);
+}
+
+#cboxPrevious:before,
+#cboxNext:before,
+#cboxClose:before,
+#cboxFullscreen:before {
+font-family:"FontAwesome"!important;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+width:100%;
+text-align:center;
+text-indent:0;
+}
+
+#cboxPrevious:before {
+content:"\f104";      /* \f104 = fa-angle-left, \f053 = fa-chevron-left */
+font-size:72px;
+}
+
+#cboxNext:before {
+content:"\f105";      /* \f105 = fa-angle-right, \f054 = fa-chevron-right */
+font-size:72px;
+}
+
+#cboxClose:before {
+font-family:sans-serif!important;
+font-size:46px;
+content:"\00d7";      /* &times; */
+/* content:"\f00d";      /* \f00d = fa-close */
+}
+
+#cboxFullscreen:before {
+font-size:26px;
+content:"\f065";      /* \f065 = fa-expand */
+}
+
+.cboxIsFullscreen #cboxFullscreen:before {
+content:"\f066";      /* \f066 = fa-compress */
+}
+
+
+#cboxTitle {
+bottom:0;
+padding:10px 15px;
+background:rgba(0,0,0,0.85);
+color:#eee;
+}
+
+#cboxTitle:empty {
+display:none!important;
+}
+
+#cboxCurrent {
+bottom:0;
+left:0;
+padding:10px 0 10px 15px;
+color:#eee;
+}
+
+#cboxTitle:empty + #cboxCurrent:not(:empty) {
+float:none!important;
+width:100%;
+background:rgba(0,0,0,0.85);
+}
+
+
+
+
+#cboxLoadingGraphic {}
