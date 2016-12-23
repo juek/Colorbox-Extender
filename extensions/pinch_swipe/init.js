@@ -130,6 +130,10 @@ $(document).on('cbox_open', function () {
 
   if (animatedSwipeActive == true) {
     $cboxWrapper.addClass("animated"); // add animate.css class
+
+    // Turn off cbox javascript animations and preload the next image
+    $.colorbox.settings.preloading=true;
+    $.colorbox.settings.transition="none";
   }
   if (pinchzoomActive == true) {
     $(document).on('cbox_complete', function () {
@@ -176,11 +180,8 @@ $(document).on('cbox_open', function () {
 
 $(document).on('cbox_complete', function () {
   $cboxImg = $cboxWrapper.find('.cboxPhoto:first');
-  console.log("cbox_complete");
-
   // Remove non necessary events from the image
   $cboxImg.off('click');
-
   // Determine from which direction we have to swipe in again
   if (lastDirection === "left") {
     cboxClassCleanup('lastDirectionSwipeFromRight');
