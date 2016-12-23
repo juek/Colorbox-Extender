@@ -32,7 +32,8 @@ display:none;
 #cboxContent, 
 #cboxWrapper,
 #cboxWrapper>div:nth-child(2),
-#cboxLoadedContent { 
+#cboxLoadedContent,
+#cboxZoomImageWrapper { 
 margin:0;
 position:fixed!important;
 float:none;
