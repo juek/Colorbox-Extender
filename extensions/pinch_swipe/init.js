@@ -1,4 +1,3 @@
-// TODO: Add swipe functionality using jquery.swipe & animate.css
 // TODO: Add optional instructions "message / image" for swipe & pinchzoom (using background images so users can easily override it via css)
 function hammerIt(elm) { // Based on: http://stackoverflow.com/a/27572427/6266306
     hammertime = new Hammer(elm, {});
@@ -26,8 +25,7 @@ function hammerIt(elm) { // Based on: http://stackoverflow.com/a/27572427/626630
             scale = 2;
             last_scale = 2;
           }else if(last_scale == 2){
-            // i dont get the point.. why simply check for last_scale? if (window.getComputedStyle(el, null).getPropertyValue('transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
-
+            // TODO: Descover why the default if (see stackoverflow) is not working properly, as the simple last_scale check fails if pinchzoom is performed before | if (window.getComputedStyle(el, null).getPropertyValue('transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
             transform =
                     "translate3d(0, 0, 0) " +
                     "scale3d(1, 1, 1) ";
@@ -41,7 +39,7 @@ function hammerIt(elm) { // Based on: http://stackoverflow.com/a/27572427/626630
           transform = "";
         }
 
-        //pan    
+        //pan
         if (scale != 1) {
             posX = last_posX + ev.deltaX;
             posY = last_posY + ev.deltaY;
@@ -122,7 +120,7 @@ $(document).on('cbox_open', function () {
   console.log("cbox_open fired: set variables ..doing stuff and things");
   $cboxWrapper = $("#colorbox:first");
   $cboxContentWrapper = $cboxWrapper.find('#cboxLoadedContent:first');
-  
+
   swipeOutLeftClass = "colorbox--action-swiped-left slideOutLeft";
   swipeOutRightClass = "colorbox--action-swiped-right slideOutRight";
   swipeInLeftClass = "colorbox--action-swiped-right-performed slideInLeft";
@@ -130,10 +128,10 @@ $(document).on('cbox_open', function () {
   swipeOutUpClass = "colorbox--action-swiped-up-performed slideOutUp";
   swipeOutDownClass = "colorbox--action-swiped-down-performed slideOutDown";
   lastDirection = "unset";
-  animatedSwipe = true;
+  animatedSwipeActive = true;
   pinchzoomActive = true;
 
-  if (animatedSwipe == true) {
+  if (animatedSwipeActive == true) {
     $cboxWrapper.addClass("animated"); // add animate.css class
   }
   if (pinchzoomActive == true) {
@@ -156,15 +154,15 @@ $(document).on('cbox_open', function () {
       console.log(event);
       cboxSwipeLeft();
       // prevent swipe fired multiple times
-      // $cboxWrapper.hammer().off('swipeleft');      
-    }    
+      // $cboxWrapper.hammer().off('swipeleft');
+    }
     return false;
   });
   $cboxWrapper.hammer().on('swiperight', function (event, data) {
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       console.log('hammerSwipeRight!');
-      cboxSwipeRight();      
+      cboxSwipeRight();
     }
     return false;
   });
@@ -173,7 +171,7 @@ $(document).on('cbox_open', function () {
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       console.log('hammerSwipeUP!');
-      cboxSwipeUp();     
+      cboxSwipeUp();
     }
       return false;
   });
@@ -181,7 +179,7 @@ $(document).on('cbox_open', function () {
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       console.log('hammerSwipeDown!');
-      cboxSwipeDown();      
+      cboxSwipeDown();
     }
     return false;
   });
@@ -189,9 +187,18 @@ $(document).on('cbox_open', function () {
 });
 
 $(document).on('cbox_load', function () {
-  $cboxImg = $cboxWrapper.find('.cboxPhoto:first');
   console.log("cbox_load");
+  // moved "swipe in again" scripts to cbox_complete as cbox_load fires to early? (buggy in chrome)
+});
 
+$(document).on('cbox_complete', function () {
+  $cboxImg = $cboxWrapper.find('.cboxPhoto:first');
+  console.log("cbox_complete");
+
+  // Remove non necessary events from the image
+  $cboxImg.off('click');
+
+  // Determine from which direction we have to swipe in again
   if (lastDirection === "left") {
     console.log('perform swipe in from the right side!');
     cboxClassCleanup('lastDirectionSwipeFromRight');
@@ -201,13 +208,5 @@ $(document).on('cbox_load', function () {
     cboxClassCleanup('lastDirectionSwipeFromLeft');
     $cboxWrapper.addClass(swipeInLeftClass);
   }
+
 });
-
-$(document).on('cbox_complete', function () {
-  $cboxImg = $cboxWrapper.find('.cboxPhoto:first');
-  console.log("cbox_complete");
-
-  // Remove non necessary events from the image
-  $cboxImg.off('click');
-});
-
