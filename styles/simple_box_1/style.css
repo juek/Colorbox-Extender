@@ -28,6 +28,7 @@ display:none;
 #cboxContent, 
 #cboxLoadedContent { 
 margin:0;
+z-index:9999;
 }
 
 #cboxContent img.cboxPhoto {}
