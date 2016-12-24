@@ -10,21 +10,23 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 ##Requirements##
 * Typesetter CMS 5.0+
 
-##Current extensions##
+##Current extensions and Styles##
 * Zoom images in Colorbox by implementing [jquery.zoom](http://www.jacklmoore.com/zoom).
+* Pinch zoom and swipe images in Colorbox by implementing [hammer.js](http://hammerjs.github.io).
+* 2 additional styles 'Simple Box 1' and 'MediaWiki Style'.
 * Show any image in Colorbox by using/adding the 'colorbox' class to the anchor.
 * Show a Typesetter page in Colorbox by using/adding the 'loadPageInColorbox' class to the anchor.
 
 ##Usage##
 
-**Zoom:** Once the plugin is installed, the zoom feature is enabled by default. Can be changed on the Admin page.
+**Zoom:** Once the plugin is installed, the jquery.zoom feature is enabled by default. Can be changed on the Admin page.
 
-**Any image in Colorbox:** 
+**Any image in Colorbox** (needs 'Load Colorbox -> All Pages' enabled in Settings)
 ```
 <a href="/path/to/image.jpg" class="colorbox" title="Image Caption">My Image</a>
 ```
 
-**Page in Colorbox:**
+**Page in Colorbox **(needs 'Load Colorbox -> All Pages' enabled in Settings)
 ```
 <a href="/About" class="loadPageInColorbox">About</a>
 ```
