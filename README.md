@@ -19,14 +19,14 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 
 ##Usage##
 
-**Zoom:** Once the plugin is installed, the jquery.zoom feature is enabled by default. Can be changed on the Admin page.
+**Extensions and Styles:** Once the plugin is installed, the jquery.zoom feature and the 'Simple Box 1' style are enabled by default. Can be changed on the Admin page 'Plugins &rarr; Colorbox Extender &rarr; Settings'.
 
-**Any image in Colorbox** (requires setting 'Load Colorbox -> All Pages')
+**Any image in Colorbox** (requires setting 'Load Colorbox &rarr; All Pages')
 ```
 <a href="/path/to/image.jpg" class="colorbox" title="Image Caption">My Image</a>
 ```
 
-**Page in Colorbox** (requires setting 'Load Colorbox -> All Pages')
+**Page in Colorbox** (requires setting 'Load Colorbox &rarr; All Pages')
 ```
 <a href="/About" class="loadPageInColorbox">About</a>
 ```
