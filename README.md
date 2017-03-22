@@ -23,7 +23,9 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 
 **Any image in Colorbox** (requires setting 'Load Colorbox &rarr; All Pages')
 ```
-<a href="/path/to/image.jpg" class="colorbox" title="Image Caption">My Image</a>
+<a href="/path/to/image.jpg" class="colorbox" title="Image Caption">
+  <img src="/path/to/thumbnail.jpg" alt="My Image" />
+</a>
 ```
 
 **Page in Colorbox** (requires setting 'Load Colorbox &rarr; All Pages')
