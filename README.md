@@ -19,7 +19,7 @@ See also [Typesetter Home](http://www.typesettercms.com), [Typesetter on GitHub]
 
 ## Usage ##
 
-**Extensions and Styles:** Once the plugin is installed, the jquery.zoom feature and the 'Simple Box 1' style are enabled by default. Can be changed on the Admin page 'Plugins &rarr; Colorbox Extender &rarr; Settings'.
+**Extensions and styles:** Once the plugin is installed, the jquery.zoom feature and the 'Simple Box 1' style are enabled by default. Can be changed on the Admin page 'Plugins &rarr; Colorbox Extender &rarr; Settings'.
 
 **Any image in Colorbox** (requires setting 'Load Colorbox &rarr; All Pages')
 ```
@@ -48,7 +48,7 @@ Until the plugin is released on typesettercms.com, you need to download and inst
 
 2. Upload the extracted folder 'Colorbox-Extender-master' to your server into the /addons directory
 
-3. Install using Typesetter's Admin Toolbox -> Plugins -> Manage -> Available -> Custom Sections
+3. Install using Typesetter's Admin Toolbox -> Plugins -> Manage -> Available -> Colorbox Extender
 
 ## License
 GPL License, same as Typesetter CMS. For bundled thirdparty components see the respective subdirectories.
