@@ -7,11 +7,16 @@ Custom Colorbox style 'Simple Box 1'
 * needs FontAwesome to be loaded
 
 Author: J. Krausz
-Date: 2016-12-22
+Date: 2017-05-26
 Version 1.0
 #############################################################################
 */
 
+#cboxWrapper {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+}
 
 #cboxOverlay {
 background:#000;
@@ -20,14 +25,22 @@ background:#000;
 #cboxTopLeft, #cboxTopCenter, #cboxTopRight,
 #cboxMiddleLeft, #cboxMiddleRight,
 #cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight {
-width:0;
-height:0;
+width:0!important;
+height:0!important;
 display:none;
 }
 
-#cboxContent { 
+#cboxContent {
 margin:0;
 z-index:9999;
+background:#ddd;
+}
+
+#cboxContent #cboxLoadedContent{
+margin-bottom:0;
+background:#ddd;
+padding:0;
+border:none;
 }
 
 #cboxContent img.cboxPhoto {}
@@ -37,9 +50,9 @@ cursor:all-scroll;
 cursor:zoom-in; /* not supported in IE */
 }
 
-#cboxPrevious,
-#cboxNext,
-#cboxClose {
+#cboxContent #cboxPrevious,
+#cboxContent #cboxNext,
+#cboxContent #cboxClose {
 position:absolute;
 background:none;
 width:64px;
@@ -52,25 +65,25 @@ text-shadow:0 0 2px rgba(0,0,0,0.7), 0 0 8px rgba(0,0,0,0.5);
 z-index:10;
 }
 
-#cboxPrevious:hover,
-#cboxNext:hover,
-#cboxClose:hover {
+#cboxContent #cboxPrevious:hover,
+#cboxContent #cboxNext:hover,
+#cboxContent #cboxClose:hover {
 color:rgba(255,255,255,1); 
 }
 
-#cboxPrevious {
+#cboxContent #cboxPrevious {
 margin:-32px 0 0;
 top:50%;
 left:0;
 right:auto;
 }
-#cboxNext {
+#cboxContent #cboxNext {
 margin:-32px 0 0;
 top:50%;
 left:auto;
 right:0;
 }
-#cboxClose {
+#cboxContent #cboxClose {
 margin:0;
 top:0;
 right:0;
@@ -78,9 +91,9 @@ bottom:auto;
 left:auto;
 }
 
-#cboxPrevious:before,
-#cboxNext:before,
-#cboxClose:before {
+#cboxContent #cboxPrevious:before,
+#cboxContent #cboxNext:before,
+#cboxContent #cboxClose:before {
 font-family:"FontAwesome"!important;
 font-size:48px;
 position:absolute;
@@ -93,44 +106,57 @@ text-align:center;
 text-indent:0;
 }
 
-#cboxPrevious:before {
+#cboxContent #cboxPrevious:before {
 content:"\f104";      /* \f104 = fa-angle-left, \f053 = fa-chevron-left */
 }
 
-#cboxNext:before {
+#cboxContent #cboxNext:before {
 content:"\f105";      /* \f105 = fa-angle-right, \f054 = fa-chevron-right */
 }
 
-#cboxClose:before {
+#cboxContent #cboxClose:before {
 font-size:24px;
 content:"\f00d";      /* \f00d = fa-close */
 }
 
-#cboxTitle {
-bottom:0;
-padding:10px 15px;
+#cboxContent #cboxTitle {
+top:auto;
+left:0;
+right:0;
+bottom:2.5em;
+padding:1.25em 1.5em 0.25em 1.5em;
 background:rgba(0,0,0,0.85);
 color:#eee;
+font-weight:normal;
+text-align:center;
+text-indent:0;
 }
 
-#cboxTitle:empty {
+#cboxContent #cboxTitle:empty {
 display:none!important;
 }
 
-#cboxCurrent {
+#cboxContent #cboxCurrent {
+top:auto;
 bottom:0;
+right:0;
 left:0;
-padding:10px 0 10px 15px;
-color:#eee;
-}
-
-#cboxTitle:empty + #cboxCurrent:not(:empty) {
 float:none!important;
-width:100%;
+padding:0 1.5em;
+line-height:2;
+height:2.5em;
+font-weight:normal;
+text-align:center;
+white-space:nowrap;
+overflow:hidden;
+text-indent:0;
+text-overflow:ellipsis;
+color:#eee;
 background:rgba(0,0,0,0.85);
 }
 
 
-
-
-#cboxLoadingGraphic {}
+/*
+#cboxContent #cboxLoadingOverlay {}
+#cboxContent #cboxLoadingGraphic {}
+*/
