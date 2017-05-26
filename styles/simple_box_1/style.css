@@ -119,41 +119,46 @@ font-size:24px;
 content:"\f00d";      /* \f00d = fa-close */
 }
 
+#cboxContent #cboxCurrent,
 #cboxContent #cboxTitle {
 top:auto;
 left:0;
 right:0;
-bottom:2.5em;
-padding:1.25em 1.5em 0.25em 1.5em;
-background:rgba(0,0,0,0.85);
+bottom:0;
 color:#eee;
 font-weight:normal;
 text-align:center;
 text-indent:0;
+opacity:1;
+-webkit-transition:all 0.6s;
+transition:all 0.6s;
+}
+
+#cboxContent #cboxCurrent {
+float:none!important;
+padding:0 1.5em;
+line-height:2;
+height:2.5em;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+pointer-events:none;
+}
+
+#cboxContent #cboxTitle {
+background:rgba(0,0,0,0.85);
+padding:1.25em 1.5em 3em 1.5em;
 }
 
 #cboxContent #cboxTitle:empty {
 display:none!important;
 }
 
-#cboxContent #cboxCurrent {
-top:auto;
-bottom:0;
-right:0;
-left:0;
-float:none!important;
-padding:0 1.5em;
-line-height:2;
-height:2.5em;
-font-weight:normal;
-text-align:center;
-white-space:nowrap;
-overflow:hidden;
-text-indent:0;
-text-overflow:ellipsis;
-color:#eee;
-background:rgba(0,0,0,0.85);
+#cboxContent #cboxTitle:hover,
+#cboxContent #cboxTitle:hover + #cboxCurrent{
+opacity:0;
 }
+
 
 
 /*
