@@ -3,7 +3,7 @@
 $(document).ready( function(){
 
   //* open any link in Colorbox that has the 'colorbox' class
-  $(".colorbox").colorbox( $gp.cboxSettings() );
+  $("a.colorbox").colorbox( $gp.cboxSettings() );
   //*/
 
   //* loads any Typesetter page into Colorbox
