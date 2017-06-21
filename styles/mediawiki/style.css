@@ -16,6 +16,7 @@ Version 1.0
 #cboxContent {
 background:#000;
 opacity:1!important;
+float:none!important;
 }
 
 #cboxTopLeft, #cboxTopCenter, #cboxTopRight,
@@ -34,6 +35,7 @@ display:none;
 #cboxWrapper>div:nth-child(2),
 #cboxLoadedContent,
 #cboxZoomImageWrapper { 
+border:none;
 margin:0;
 position:fixed!important;
 float:none;
@@ -45,7 +47,10 @@ left:0!important;
 width:100%!important;
 height:100%!important;
 background-color:#000!important;
-overflow-y:hidden!important;
+}
+
+#cboxWrapper{
+overflow:hidden!important;
 }
 
 #cboxContent:-webkit-full-screen:-webkit-backdrop,
@@ -133,6 +138,7 @@ top:48px;
 color:rgba(255,255,255,1); 
 }
 
+
 #cboxPrevious:hover {
 -webkit-transform:translateX(-4px);
 -moz-transform:translateX(-4px);
@@ -147,6 +153,7 @@ transform:translateX(-4px);
 transform:translateX(4px);
 }
 
+
 #cboxPrevious:before,
 #cboxNext:before,
 #cboxClose:before,
@@ -156,7 +163,7 @@ position:absolute;
 top:0;
 left:0;
 width:100%;
-width:100%;
+height:100%;
 text-align:center;
 text-indent:0;
 }
@@ -175,7 +182,6 @@ font-size:72px;
 font-family:sans-serif!important;
 font-size:46px;
 content:"\00d7";      /* &times; */
-/* content:"\f00d";      /* \f00d = fa-close */
 }
 
 #cboxFullscreen:before {
@@ -189,10 +195,14 @@ content:"\f066";      /* \f066 = fa-compress */
 
 
 #cboxTitle {
+top:auto;
+left:0;
+right:0;
 bottom:0;
-padding:10px 15px;
-background:rgba(0,0,0,0.85);
+padding:10px 120px;
+background:rgba(0,0,0,0.75);
 color:#eee;
+text-align:center;
 }
 
 #cboxTitle:empty {
@@ -200,19 +210,19 @@ display:none!important;
 }
 
 #cboxCurrent {
+top:auto;
+right:auto;
 bottom:0;
 left:0;
 padding:10px 0 10px 15px;
 color:#eee;
+text-indent:0;
 }
 
 #cboxTitle:empty + #cboxCurrent:not(:empty) {
 float:none!important;
 width:100%;
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0,0.75);
 }
-
-
-
 
 #cboxLoadingGraphic {}
