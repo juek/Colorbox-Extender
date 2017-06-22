@@ -133,7 +133,7 @@ $(document).on('cbox_open', function () {
 
     // Turn off cbox javascript animations and preload the next image
     $.colorbox.settings.preloading=true;
-    $.colorbox.settings.transition="none";
+    $.colorbox.settings.transition="";
   }
   if (pinchzoomActive == true) {
     $(document).on('cbox_complete', function () {
