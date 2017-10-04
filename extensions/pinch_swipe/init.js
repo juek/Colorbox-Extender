@@ -149,6 +149,7 @@ $(document).on('cbox_open', function () {
   }
 
   $cboxWrapper.hammer().on('swipeleft', function (event, data) {
+	if ($cboxWrapper.find('#cboxPrevious').css("display") == "none") {return false;}
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       cboxSwipeLeft();
@@ -156,6 +157,7 @@ $(document).on('cbox_open', function () {
     return false;
   });
   $cboxWrapper.hammer().on('swiperight', function (event, data) {
+	if ($cboxWrapper.find('#cboxPrevious').css("display") == "none") {return false;}
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       cboxSwipeRight();
@@ -163,6 +165,7 @@ $(document).on('cbox_open', function () {
     return false;
   });
   $cboxWrapper.hammer().on('swipeup', function (event, data) {
+	if ($cboxWrapper.find('#cboxPrevious').css("display") == "none") {return false;}
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       cboxSwipeUp();
@@ -170,6 +173,7 @@ $(document).on('cbox_open', function () {
     return false;
   });
   $cboxWrapper.hammer().on('swipedown', function (event, data) {
+	if ($cboxWrapper.find('#cboxPrevious').css("display") == "none") {return false;}
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       cboxSwipeDown();
