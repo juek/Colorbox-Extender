@@ -154,8 +154,10 @@ padding:1.25em 1.5em 3em 1.5em;
 display:none!important;
 }
 
-#cboxContent #cboxTitle:hover,
-#cboxContent #cboxTitle:hover + #cboxCurrent{
+#cboxOverlay:hover + #colorbox #cboxTitle,
+#cboxOverlay:hover + #colorbox #cboxTitle + #cboxCurrent,
+#cboxOverlay:hover + #colorbox #cboxTitle ~ button
+{
 opacity:0;
 }
 
