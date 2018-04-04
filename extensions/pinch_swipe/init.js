@@ -150,6 +150,12 @@ $(document).on('cbox_open', function () {
 
   $cboxWrapper.hammer().on('swipeleft', function (event, data) {
 	if ($cboxWrapper.find('#cboxPrevious').css("display") == "none") {return false;}
+	  
+	//#### patch - block swipe of zoomed image
+	$tranf = $cboxWrapper.find('#cboxZoomImageWrapper').css('transform').match(/-?[\d\.]+/g);
+	if ($tranf != null && $tranf[0] != 1){return false;}
+	//#### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	  
+	  
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       cboxSwipeLeft();
@@ -158,6 +164,12 @@ $(document).on('cbox_open', function () {
   });
   $cboxWrapper.hammer().on('swiperight', function (event, data) {
 	if ($cboxWrapper.find('#cboxPrevious').css("display") == "none") {return false;}
+
+	//#### patch - block swipe of zoomed image
+	$tranf = $cboxWrapper.find('#cboxZoomImageWrapper').css('transform').match(/-?[\d\.]+/g);
+	if ($tranf != null && $tranf[0] != 1){return false;}
+	//#### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  
     if (event.gesture) {
       event.gesture.srcEvent.stopPropagation();
       cboxSwipeRight();
