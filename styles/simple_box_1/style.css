@@ -104,6 +104,7 @@ height:64px;
 line-height:64px;
 text-align:center;
 text-indent:0;
+background-image:none; /* overrule new Minimalistic style in Typesetter 5.2 */
 }
 
 #cboxContent #cboxPrevious:before {
