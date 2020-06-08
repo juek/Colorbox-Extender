@@ -3,6 +3,13 @@
 window.colorbox_lang_backup = JSON.stringify(colorbox_lang);
 
 $(function(){
+  // wrap all images that have the 'colorbox' class with <a> tag
+  $("img.colorbox").each( function(idx,el){
+  	if ( $(el).parent('a').length == 0 ) {
+  		$(el).wrap('<a class="colorbox" href="'+$(el).attr('src')+'"></a>');
+  	}
+  });
+  //
 
   // open any link in Colorbox that has the 'colorbox' class
   $("a.colorbox").colorbox( $gp.cboxSettings() );
