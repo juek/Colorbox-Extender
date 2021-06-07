@@ -5,7 +5,10 @@ window.colorbox_lang_backup = JSON.stringify(colorbox_lang);
 $(function(){
 
   // open any link in Colorbox that has the 'colorbox' class
-  $("a.colorbox").colorbox( $gp.cboxSettings() );
+	$("a.colorbox").on('click', function(e){
+		$(this).colorbox( $gp.cboxSettings() );
+	});  
+  
   //
 
   // loads any Typesetter page into Colorbox
